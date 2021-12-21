@@ -1,0 +1,4 @@
+JSON_PATH,JSON_PATH_TO_EXPLODE,JSON_PATH_EXPLODED
+order.lineItems,order.lineitems,order_lineItems
+order.lineItems.charges,order_lineItems.charges,order_lineItems_charges
+order.lineItems.charges.taxes,order_lineItems_charges.taxes,order_lineItems_charges_taxes
