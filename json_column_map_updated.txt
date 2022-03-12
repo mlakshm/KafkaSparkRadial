@@ -7,6 +7,7 @@ CUSTOMER_ORDER_ID,order.customerOrderId,order.customerOrderId
 ORDER_TYPE,order.type,order.type
 ORDER_CLOSED_FLAG,order.orderClosed,order.orderClosed
 ORSO_CODE,order.orderSourceCode,order.orderSourceCode
+EXTERNAL_ORDER_ID,order.externalOrderId,order.externalOrderId
 
 TABLE_NAME:KAFKARADIAL.ROM_ORDER_LINE_STG0
 ORDER_ID,order.id,order.id
