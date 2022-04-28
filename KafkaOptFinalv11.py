@@ -225,11 +225,7 @@ dfi.printSchema()
 
 
 # In[ ]:
-
-
-ddlEndpoint="svc-60f25f0a-97fc-4142-a64f-bbef8e7535d6-ddl.gcp-iowa-1.svc.singlestore.com:3306"
-user="admin"
-password="GaneshJanus1!"    
+ 
 
 
 
@@ -241,7 +237,7 @@ def writeToSQLWarehouse(jdf,epochId,tbl):
   #jdf.show()
   jdf.write.format("singlestore") \
   .mode("overwrite") \
-  .option("ddlEndpoint", ddlEndpoint) \
+  .option("ddlEndpoint", jdbcUrl) \
   .option("user", user) \
   .option("password", password) \
   .save(tbl)
