@@ -715,21 +715,31 @@ def updateDFSplFields_ROM_ORDER_PROMOTION_STG0( df,jsonpathlist_clean,rom_list_c
         
         try: 
             
-           df.select("*","order_lineItems_charges_discounts_customAttributes.name","order_lineItems_charges_discounts_customAttributes.value") 
-           df=df.select("*","order_lineItems_charges_discounts_customAttributes.name",col("order_lineItems_charges_discounts_customAttributes.value").alias("cvalue"))
-           df=df.withColumnRenamed("name", "PROMO_CUSTOM_NAME")
-           df=df.withColumnRenamed("cvalue", "PROMO_CUSTOM_VALUE")
-           #df.show()
+           df.select("*","order_lineItems_charges_discounts.customAttributes.name","order_lineItems_charges_discounts.customAttributes.value") 
+
                                                     
            try:
             
-                df = df.withColumn(  "PROMOTION_ID", 
-                        when( col("PROMO_CUSTOM_NAME") == "promoCode", col("PROMO_CUSTOM_VALUE") ) ).withColumn(  "PROMOTION_DESCRIPTION", 
-                        when( col("PROMO_CUSTOM_NAME") == "promoDescription", col("PROMO_CUSTOM_VALUE") ) ).withColumn(  "PROMOTION_CODE", 
-                         when( col("PROMO_CUSTOM_NAME") == "promoId", col("PROMO_CUSTOM_VALUE") ) )
-                        # .withColumn(  "PROMO_EFFECT_TYPE", 
-                        #  when( col("PROMO_EFFECT_TYPE") == "EffectType", col("PROMO_CUSTOM_VALUE") ) )
-                        
+                df.select(col("order_lineItems_charges_discounts.customAttributes.name").getItem(0))
+                df.select(col("order_lineItems_charges_discounts.customAttributes.value").getItem(0))
+                df.select(col("order_lineItems_charges_discounts.customAttributes.name").getItem(1))
+                df.select(col("order_lineItems_charges_discounts.customAttributes.value").getItem(1))
+                df.select(col("order_lineItems_charges_discounts.customAttributes.name").getItem(2))
+                df.select(col("order_lineItems_charges_discounts.customAttributes.value").getItem(2))
+                
+                df=df.withColumn("PROMOTION_ID",when(df["order_lineItems_charges_discounts.customAttributes.name"].getItem(0) == "promoCode",
+                                                df["order_lineItems_charges_discounts.customAttributes.value"].getItem(0))).withColumn("PROMOTION_DESCRIPTION",
+                                 when(df["order_lineItems_charges_discounts.customAttributes.name"].getItem(1) == "promoDescription",
+                                 df["order_lineItems_charges_discounts.customAttributes.value"].getItem(1))).withColumn("PROMOTION_CODE",
+                                 when(df["order_lineItems_charges_discounts.customAttributes.name"].getItem(2) == "promoId",
+                                 df["order_lineItems_charges_discounts.customAttributes.value"].getItem(2)))
+                                                                                                                        
+                                                                                                                        
+                                                                                                                        #.withColumn("PROMOTION_DESCRIPTION",
+                                 #when(df["order_lineItems_charges_discounts.customAttributes.name"].getItem(3) == "EffectType",
+                                 #df["order_lineItems_charges_discounts.customAttributes.value"].getItem(3)))
+
+
                 jsonpathlist_clean.append("PROMOTION_ID")
                 rom_list_clean.append("PROMOTION_ID")    
                 romlen_list_clean.append("100000") 
@@ -741,17 +751,13 @@ def updateDFSplFields_ROM_ORDER_PROMOTION_STG0( df,jsonpathlist_clean,rom_list_c
                 jsonpathlist_clean.append("PROMOTION_CODE")
                 rom_list_clean.append("PROMOTION_CODE")    
                 romlen_list_clean.append("100000") 
-                
-                # jsonpathlist_clean.append("PROMO_EFFECT_TYPE")
-                # rom_list_clean.append("PROMO_EFFECT_TYPE")    
-                # romlen_list_clean.append("100000")
             
            except Exception as e:
                
-               print("PROMOTION_ID not retrieved")
+               print("PROMOTION details not retrieved")
                #print(e)
                                                     
-         
+                                                    
         except Exception as e:
                
                print(" Can't retrieve Promotion Custom Attributes")
@@ -760,7 +766,7 @@ def updateDFSplFields_ROM_ORDER_PROMOTION_STG0( df,jsonpathlist_clean,rom_list_c
 
                     
        return df,jsonpathlist_clean,rom_list_clean,romlen_list_clean       
-    
+
     
          
 def updateDFSplFields_ROM_ORDER_REFERENCES_STG0(df,jsonpathlist_clean,rom_list_clean,romlen_list_clean):
@@ -1270,6 +1276,8 @@ def prepareDFXA(df,json_exploded_path_list,romlistfinal1,rom_col_len_list,epochI
        finaldf = sdf.groupby(rom_list_clean).count()
        finaldf=finaldf.drop("count")
      
+        
+        
        finaldf = finaldf.coalesce(16)
        
            
