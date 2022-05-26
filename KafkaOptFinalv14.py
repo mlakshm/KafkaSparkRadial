@@ -208,8 +208,8 @@ with open(cp4dcfginfopath) as f:
     truststore_location=cfg_infolist[7]
     truststore_password=cfg_infolist[8]
     kafkatopic=cfg_infolist[9]
-    singlstoreurl=cfg_infolist[10]
-    singlestoreport=cfg_infolist[11]
+    singlestoreurl=cfg_infolist[10]
+    singlestoreport=int(cfg_infolist[11])
     singlestoredb=cfg_infolist[12]
     
     
@@ -427,11 +427,10 @@ def insertFailedBatch(df,epochId,conn):
     
 def connToMySQL():
     
-
     
     conn = pymysql.connect(
-    user=user,
-    password=password,
+    user=singlestoreuser,
+    password=singlestorepassword,
     host=singlestoreurl,
     port=singlestoreport,
     database=singlestoredb, autocommit=True)
