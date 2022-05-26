@@ -1,0 +1,27 @@
+{
+        "application_details": {
+                "application": "/myapp/KafkaOptFinalv14.py",
+                "application_arguments": ["/myapp/json_column_map_updated_newest_filt.txt","/myapp/cfg_cp4d_ss_ibm_cloud.txt","/myapp/order_created_test3.json","/myapp/arrays_order_created.txt","/myapp/GChkPt12","50","/myapp/lockfile.txt"],
+                "driver-memory": "8G",
+                "driver-cores": 2,
+                "num-executors": 2,
+                "conf": {
+                        "spark.app.name": "SparkRadial",
+                        "spark.executor.extraClassPath": "/myapp/*",
+                        "spark.driver.extraClassPath": "/myapp/*",
+                        "spark.eventLog.enabled":"true",
+                        "spark.executor.memory": "4G",
+                        "spark.executor.cores": 8,
+                        "spark.driver.maxResultSize": "2G",
+                        "spark.default.parallelism": 16,
+                        "spark.sql.shuffle.partitions": 16
+                },
+                "jars":"/myapp/spark-sql-kafka-0-10_2.12-3.0.2.jar,/myapp/spark-streaming-kafka-0-10-assembly_2.12-3.0.2.jar,/myapp/kafka-clients-2.8.0.jar,/myapp/commons-pool2-2.11.1.jar,/myapp/singlestore-spark-connector_2.12-4.0.0-spark-3.0.0.jar,/myapp/singlestore-jdbc-client-1.0.1.jar"
+        },
+        "template_id": "spark-3.0.0-jaas-v2-cp4d-template",
+        "volumes": [{
+                "name": "Spvol",
+                "mount_path": "/myapp",
+                "source_sub_path": ""
+        }]
+}
