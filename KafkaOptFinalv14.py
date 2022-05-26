@@ -85,7 +85,7 @@ while my_file.exists():
     #sys.exit(0)
     
 
-
+### Creates a Lock File ####### 
 os.mknod(my_file)
     
 
@@ -199,8 +199,8 @@ with open(cp4dcfginfopath) as f:
     contents=contents.strip()
     cfg_infolist=contents.split("\n")
     jdbcUrl=cfg_infolist[0]
-    user=cfg_infolist[1]
-    password=cfg_infolist[2]
+    singlestoreuser=cfg_infolist[1]
+    singlestorepassword=cfg_infolist[2]
     jdbcstr=cfg_infolist[3]
     kafka_bootstrap_servers=cfg_infolist[4]
     scram_user=cfg_infolist[5]
@@ -208,6 +208,10 @@ with open(cp4dcfginfopath) as f:
     truststore_location=cfg_infolist[7]
     truststore_password=cfg_infolist[8]
     kafkatopic=cfg_infolist[9]
+    singlstoreurl=cfg_infolist[10]
+    singlestoreport=cfg_infolist[11]
+    singlestoredb=cfg_infolist[12]
+    
     
 f.close()    
 
@@ -346,8 +350,8 @@ def writeToSQLWarehouse(jdf,epochId,tbl,conn):
   .mode("overwrite") \
   .option("loadDataCompression", "LZ4") \
   .option("ddlEndpoint", jdbcUrl) \
-  .option("user", user) \
-  .option("password", password) \
+  .option("user", singlestoreuser) \
+  .option("password", singlestorepassword) \
   .save(tbl)
   insertLogs("INFO","Completed writing to table "+tbl, conn)  
   print("jhghjgjn")
@@ -426,11 +430,11 @@ def connToMySQL():
 
     
     conn = pymysql.connect(
-    user='admin',
-    password='IBMR0cks!22pwd',
-    host='169.60.196.11',
-    port=3306,
-    database='KAFKARADIAL', autocommit=True)
+    user=user,
+    password=password,
+    host=singlestoreurl,
+    port=singlestoreport,
+    database=singlestoredb, autocommit=True)
 
     print("Connected to PYMYSQL")
 
