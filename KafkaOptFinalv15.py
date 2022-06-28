@@ -735,20 +735,32 @@ def updateDFSplFields_ROM_ORDER_LINE_STG0(df, jsonpathlist_clean,rom_list_clean,
     
         try: 
             
+           df2 = df.groupBy(col("order.id"), col("order_lineItems"),col("order_lineItems_sublineItems")).count()
+           df2.show()
+           df2 = df2.groupBy("id","order_lineItems").sum("order_lineItems_sublineItems.quantity")
+           df2 = df2.withColumnRenamed("sum(order_lineItems_sublineItems.quantity AS `quantity`)", "ORDERED_QTY") 
+           df=df.alias('a').join(df2.alias('b'),(col('b.id') == col('a.order.id')) & (col('b.lineNo') == col('a.order_lineItems.lineNo')),"left").select("a.*","b.ORDERED_QTY")
+
+           
+           #
+           #df.show()
             
            #df2 = df.groupBy(col("order.id"), col("order_lineItems_sublineItems.quantity")).sum("order_lineItems_sublineItems.quantity")
            #df2 = df2.withColumnRenamed("sum(order_lineItems_sublineItems.quantity AS `quantity`)", "ORDERED_QTY") 
            
            #df=df.alias('a').join(df2.alias('b'),col('b.id') == col('a.order.id')).select("a.*","b.ORDERED_QTY")
             
-           df2 = df.groupBy(col("order.id"), col("order_lineItems"),col("order_lineItems_sublineItems")).count()
+           ###df2 = df.groupBy(col("order.id"), col("order_lineItems"),col("order_lineItems_sublineItems")).count()
            #df2 = df2.coalesce(8)
-           df2 = df2.groupBy("id","order_lineItems").agg(sum('order_lineItems_sublineItems.quantity').alias("ORDERED_QTY"))
+           ###df2 = df2.groupBy("id","order_lineItems").agg(sum('order_lineItems_sublineItems.quantity').alias("ORDERED_QTY"))
+           
+           #df2.show()
            #df = df.withColumn("ORDERED_QTY", func.sum("order_lineItems_sublineItems.quantity") \
            #                          .over(Window.partitionBy("order_lineItems"))) 
-           df2.select("*","order_lineItems_sublineItems.quantity").show()
-           df=df.alias('a').join(broadcast(df2.alias('b')),col('b.id') == col('a.order.id'),"left").select("a.*","b.ORDERED_QTY")
+           #df2.select("*","order_lineItems_sublineItems.quantity").show()
+           ###df=df.alias('a').join(broadcast(df2.alias('b')),col('b.id') == col('a.order.id'),"left").select("a.*","b.ORDERED_QTY")
             
+           #df2 = df.groupBy(col("order.id"), col("order_lineItems"),col("order_lineItems_sublineItems")).count()
            
            
            jsonpathlist_clean.append("ORDERED_QTY")
