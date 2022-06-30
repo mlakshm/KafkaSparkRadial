@@ -1,0 +1,633 @@
+{
+  "topicName" : "LVS.UAT01.order_created",
+  "order" : {
+    "priceInfo" : {
+      "currency" : "USD"
+    },
+    "sellerId" : "BB2US",
+    "id" : "30002217658",
+    "customerOrderId" : "0047408032704",
+    "zoneId" : "LVS",
+    "searchableFields" : [ "230-024464174", "230-022665828", "ship_to_home", "any_std", "roger tester", "0047408032704", "30002217658", "sales", "eb2c", "tester", "roger", "0042800307093", "test01bbw@gmail.com", "roger", "tester", "43230", "7777777777" ],
+    "orderTimestamp" : "2021-09-22T06:55:30-04:00",
+    "lineItems" : [ {
+      "lineNo" : "1",
+      "quantity" : 1,
+      "unitPrice" : 12.50,
+      "itemDetail" : {
+        "itemId" : "230-024464174",
+        "uom" : "EACH",
+        "productClass" : "GOOD",
+        "itemDesc" : "Beautiful Day",
+        "lineType" : "MERCH",
+        "upcCode" : "667550556540",
+        "unitOfMeasure" : "EACH",
+        "gii" : "553517334"
+      },
+      "shippingAddressRefId" : "ship_address_home_1",
+      "additionalAddresses" : [ ],
+      "charges" : [ {
+        "id" : "1",
+        "isBillable" : true,
+        "isDiscount" : false,
+        "category" : "Price",
+        "name" : "Price",
+        "detail" : {
+          "amount" : 12.50,
+          "perUnit" : 12.50,
+          "perLine" : 0.00,
+          "shippingCharge" : false
+        },
+        "taxes" : [ {
+          "taxName" : "OHIO 28101 Sales and Use Tax",
+          "isTaxableFlag" : true,
+          "taxPercentage" : 0,
+          "amount" : 0.00,
+          "customAttributes" : [ ],
+          "category" : "Price",
+          "invoicedTax" : 0.00,
+          "reference1" : "SALES",
+          "impositionType" : "General Sales and Use Tax",
+          "impositionValue" : "Sales and Use Tax",
+          "jurisdiction" : "OHIO",
+          "jurisdictionId" : "28101",
+          "jurisdictionLevel" : "STATE",
+          "originalTax" : 0.00,
+          "situs" : "ADMINISTRATIVE_ORIGIN"
+        }, {
+          "taxName" : "FRANKLIN 28565 Local Sales and Use Tax",
+          "isTaxableFlag" : true,
+          "taxPercentage" : 0,
+          "amount" : 0.00,
+          "customAttributes" : [ ],
+          "category" : "Price",
+          "invoicedTax" : 0.00,
+          "reference1" : "SALES",
+          "impositionType" : "General Sales and Use Tax",
+          "impositionValue" : "Local Sales and Use Tax",
+          "jurisdiction" : "FRANKLIN",
+          "jurisdictionId" : "28565",
+          "jurisdictionLevel" : "COUNTY",
+          "originalTax" : 0.00,
+          "situs" : "ADMINISTRATIVE_ORIGIN"
+        }, {
+          "taxName" : "CENTRAL OHIO TRANSIT AUTHORITY 78115 Local Sales and Use Tax",
+          "isTaxableFlag" : true,
+          "taxPercentage" : 0,
+          "amount" : 0.00,
+          "customAttributes" : [ ],
+          "category" : "Price",
+          "invoicedTax" : 0.00,
+          "reference1" : "SALES",
+          "impositionType" : "General Sales and Use Tax",
+          "impositionValue" : "Local Sales and Use Tax",
+          "jurisdiction" : "CENTRAL OHIO TRANSIT AUTHORITY",
+          "jurisdictionId" : "78115",
+          "jurisdictionLevel" : "DISTRICT",
+          "originalTax" : 0.00,
+          "situs" : "ADMINISTRATIVE_ORIGIN"
+        } ],
+        "customAttributes" : [ ],
+        "total" : {
+          "totalTaxAmount" : 0.00,
+          "totalPromotionChargeAmount" : 12.50,
+          "totalAdjustmentChargeAmount" : 0.00,
+          "netChargeAmount" : 0.00
+        },
+        "discounts" : [ {
+          "id" : "1",
+          "isBillable" : true,
+          "isDiscount" : true,
+          "category" : "MerchandiseDiscount",
+          "name" : "TEST_freew10",
+          "detail" : {
+            "amount" : 12.50,
+            "perUnit" : 12.50,
+            "perLine" : 0.00,
+            "shippingCharge" : false
+          },
+          "taxes" : [ ],
+          "customAttributes" : [ {
+            "name" : "promoCode",
+            "value" : "0229TESTFREE"
+          }, {
+            "name" : "promoDescription",
+            "value" : "Free Item (Up to $14 Value) with $10 Purchase"
+          }, {
+            "name" : "promoId",
+            "value" : "TEST_freew10"
+          } ]
+        } ],
+        "adjustments" : [ ],
+        "isTaxableFlag" : true,
+        "taxClass" : "76800"
+      }, {
+        "id" : "2",
+        "isBillable" : true,
+        "isDiscount" : false,
+        "category" : "Shipping",
+        "name" : "Shipping",
+        "detail" : {
+          "amount" : 5.99,
+          "perUnit" : 0.00,
+          "perLine" : 5.99,
+          "taxInclusivePerUnit" : 0.00,
+          "taxInclusivePerLine" : 0.00,
+          "shippingCharge" : false
+        },
+        "taxes" : [ {
+          "taxName" : "OHIO 28101 Sales and Use Tax",
+          "isTaxableFlag" : true,
+          "taxPercentage" : 5.75,
+          "amount" : 0.35,
+          "customAttributes" : [ ],
+          "category" : "Shipping",
+          "invoicedTax" : 0.18,
+          "reference1" : "SALES",
+          "impositionType" : "General Sales and Use Tax",
+          "impositionValue" : "Sales and Use Tax",
+          "jurisdiction" : "OHIO",
+          "jurisdictionId" : "28101",
+          "jurisdictionLevel" : "STATE",
+          "originalTax" : 0.18,
+          "situs" : "ADMINISTRATIVE_ORIGIN"
+        }, {
+          "taxName" : "FRANKLIN 28565 Local Sales and Use Tax",
+          "isTaxableFlag" : true,
+          "taxPercentage" : 1.25,
+          "amount" : 0.07,
+          "customAttributes" : [ ],
+          "category" : "Shipping",
+          "invoicedTax" : 0.04,
+          "reference1" : "SALES",
+          "impositionType" : "General Sales and Use Tax",
+          "impositionValue" : "Local Sales and Use Tax",
+          "jurisdiction" : "FRANKLIN",
+          "jurisdictionId" : "28565",
+          "jurisdictionLevel" : "COUNTY",
+          "originalTax" : 0.04,
+          "situs" : "ADMINISTRATIVE_ORIGIN"
+        }, {
+          "taxName" : "CENTRAL OHIO TRANSIT AUTHORITY 78115 Local Sales and Use Tax",
+          "isTaxableFlag" : true,
+          "taxPercentage" : 0.5,
+          "amount" : 0.02,
+          "customAttributes" : [ ],
+          "category" : "Shipping",
+          "invoicedTax" : 0.01,
+          "reference1" : "SALES",
+          "impositionType" : "General Sales and Use Tax",
+          "impositionValue" : "Local Sales and Use Tax",
+          "jurisdiction" : "CENTRAL OHIO TRANSIT AUTHORITY",
+          "jurisdictionId" : "78115",
+          "jurisdictionLevel" : "DISTRICT",
+          "originalTax" : 0.01,
+          "situs" : "ADMINISTRATIVE_ORIGIN"
+        } ],
+        "customAttributes" : [ ],
+        "total" : {
+          "totalTaxAmount" : 0.44,
+          "totalPromotionChargeAmount" : 0.00,
+          "totalAdjustmentChargeAmount" : 0.00,
+          "netChargeAmount" : 6.43
+        },
+        "discounts" : [ ],
+        "adjustments" : [ ],
+        "isTaxableFlag" : true,
+        "taxClass" : "91000"
+      } ],
+      "customAttributes" : [ {
+        "name" : "IMAGEURL",
+        "value" : "https://development.bathandbodyworks.com/dw/image/v2/BBDL_DEV/on/demandware.static/-/Sites-master-catalog/default/dwbdc25b89/hires/024464174.jpg?sh=471"
+      }, {
+        "name" : "PRODUCTURL",
+        "value" : "https://development.bathandbodyworks.com/p/beautiful-day-shower-gel-024464174.html"
+      }, {
+        "name" : "EstimatedDeliveryDateFROM",
+        "value" : "2021-09-27T00:00:00-00:00"
+      }, {
+        "name" : "EstimatedDeliveryDateTO",
+        "value" : "2021-10-01T00:00:00-00:00"
+      }, {
+        "name" : "FragranceName",
+        "value" : "Beautiful Day"
+      }, {
+        "name" : "requestLineId",
+        "value" : "item_1"
+      } ],
+      "instructions" : [ ],
+      "orderDates" : [ ],
+      "sublineItems" : [ {
+        "quantity" : 1,
+        "sublineNo" : "1",
+        "statusRank" : 1000,
+        "sendBackorderNotification" : true,
+        "statusDate" : "2021-09-22T10:55:52.592Z"
+      } ],
+      "fulfillmentMethod" : "SHIP_TO_HOME",
+      "carrier" : "ANY",
+      "service" : "STD",
+      "isAssociateDelivery" : "false",
+      "isCurbsidePickup" : "false",
+      "isGiftWrapItem" : false,
+      "color" : "Shower Gel",
+      "colorCode" : "9999",
+      "isHiddenGift" : false,
+      "isShipAlone" : false,
+      "shipGroupId" : "shipgroup_1",
+      "shippingChargeType" : "FLAT",
+      "shippingMethodName" : "ANY_STD",
+      "shippingMethodDisplayName" : "Standard",
+      "size" : "10 fl oz / 295 mL",
+      "sizeCode" : "9999",
+      "sublineIdSeq" : 0,
+      "lineTotal" : {
+        "totalTaxAmount" : 0.44,
+        "totalPromotionChargeAmount" : 12.50,
+        "totalAdjustmentChargeAmount" : 0.00,
+        "netChargeAmount" : 6.43
+      },
+      "isCompanion" : false,
+      "isRushOrder" : false,
+      "isTipLine" : false,
+      "isReturnComplete" : false,
+      "isShipFromEqualToShipTo" : "false",
+      "isPresell" : "false",
+      "originalTotalQuantity" : 1,
+      "totalQuantity" : 1
+    }, {
+      "lineNo" : "2",
+      "quantity" : 3,
+      "unitPrice" : 5.00,
+      "itemDetail" : {
+        "itemId" : "230-022665828",
+        "uom" : "EACH",
+        "productClass" : "GOOD",
+        "itemDesc" : "A Thousand Wishes",
+        "lineType" : "MERCH",
+        "upcCode" : "0667536685943",
+        "unitOfMeasure" : "EACH",
+        "gii" : "553219743"
+      },
+      "shippingAddressRefId" : "ship_address_home_1",
+      "additionalAddresses" : [ ],
+      "charges" : [ {
+        "id" : "1",
+        "isBillable" : true,
+        "isDiscount" : false,
+        "category" : "Price",
+        "name" : "Price",
+        "detail" : {
+          "amount" : 15.00,
+          "perUnit" : 5.00,
+          "perLine" : 0.00,
+          "shippingCharge" : false
+        },
+        "taxes" : [ {
+          "taxName" : "OHIO 28101 Sales and Use Tax",
+          "isTaxableFlag" : true,
+          "taxPercentage" : 5.75,
+          "amount" : 0.86,
+          "customAttributes" : [ ],
+          "category" : "Price",
+          "invoicedTax" : 0.86,
+          "reference1" : "SALES",
+          "impositionType" : "General Sales and Use Tax",
+          "impositionValue" : "Sales and Use Tax",
+          "jurisdiction" : "OHIO",
+          "jurisdictionId" : "28101",
+          "jurisdictionLevel" : "STATE",
+          "originalTax" : 0.86,
+          "situs" : "ADMINISTRATIVE_ORIGIN"
+        }, {
+          "taxName" : "FRANKLIN 28565 Local Sales and Use Tax",
+          "isTaxableFlag" : true,
+          "taxPercentage" : 1.25,
+          "amount" : 0.19,
+          "customAttributes" : [ ],
+          "category" : "Price",
+          "invoicedTax" : 0.19,
+          "reference1" : "SALES",
+          "impositionType" : "General Sales and Use Tax",
+          "impositionValue" : "Local Sales and Use Tax",
+          "jurisdiction" : "FRANKLIN",
+          "jurisdictionId" : "28565",
+          "jurisdictionLevel" : "COUNTY",
+          "originalTax" : 0.19,
+          "situs" : "ADMINISTRATIVE_ORIGIN"
+        }, {
+          "taxName" : "CENTRAL OHIO TRANSIT AUTHORITY 78115 Local Sales and Use Tax",
+          "isTaxableFlag" : true,
+          "taxPercentage" : 0.5,
+          "amount" : 0.08,
+          "customAttributes" : [ ],
+          "category" : "Price",
+          "invoicedTax" : 0.08,
+          "reference1" : "SALES",
+          "impositionType" : "General Sales and Use Tax",
+          "impositionValue" : "Local Sales and Use Tax",
+          "jurisdiction" : "CENTRAL OHIO TRANSIT AUTHORITY",
+          "jurisdictionId" : "78115",
+          "jurisdictionLevel" : "DISTRICT",
+          "originalTax" : 0.08,
+          "situs" : "ADMINISTRATIVE_ORIGIN"
+        } ],
+        "customAttributes" : [ ],
+        "total" : {
+          "totalTaxAmount" : 1.13,
+          "totalPromotionChargeAmount" : 0.00,
+          "totalAdjustmentChargeAmount" : 0.00,
+          "netChargeAmount" : 16.13
+        },
+        "discounts" : [ ],
+        "adjustments" : [ ],
+        "isTaxableFlag" : true,
+        "taxClass" : "76800"
+      }, {
+        "id" : "2",
+        "isBillable" : true,
+        "isDiscount" : false,
+        "category" : "Shipping",
+        "name" : "Shipping",
+        "detail" : {
+          "amount" : 0.00,
+          "perUnit" : 0.00,
+          "perLine" : 0.00,
+          "taxInclusivePerUnit" : 0.00,
+          "taxInclusivePerLine" : 0.00,
+          "shippingCharge" : false
+        },
+        "taxes" : [ {
+          "taxName" : "OHIO 28101 Sales and Use Tax",
+          "isTaxableFlag" : true,
+          "taxPercentage" : 5.75,
+          "amount" : 0.00,
+          "customAttributes" : [ ],
+          "category" : "Shipping",
+          "invoicedTax" : 0.17,
+          "reference1" : "SALES",
+          "impositionType" : "General Sales and Use Tax",
+          "impositionValue" : "Sales and Use Tax",
+          "jurisdiction" : "OHIO",
+          "jurisdictionId" : "28101",
+          "jurisdictionLevel" : "STATE",
+          "originalTax" : 0.17,
+          "situs" : "ADMINISTRATIVE_ORIGIN"
+        }, {
+          "taxName" : "FRANKLIN 28565 Local Sales and Use Tax",
+          "isTaxableFlag" : true,
+          "taxPercentage" : 1.25,
+          "amount" : 0.00,
+          "customAttributes" : [ ],
+          "category" : "Shipping",
+          "invoicedTax" : 0.03,
+          "reference1" : "SALES",
+          "impositionType" : "General Sales and Use Tax",
+          "impositionValue" : "Local Sales and Use Tax",
+          "jurisdiction" : "FRANKLIN",
+          "jurisdictionId" : "28565",
+          "jurisdictionLevel" : "COUNTY",
+          "originalTax" : 0.03,
+          "situs" : "ADMINISTRATIVE_ORIGIN"
+        }, {
+          "taxName" : "CENTRAL OHIO TRANSIT AUTHORITY 78115 Local Sales and Use Tax",
+          "isTaxableFlag" : true,
+          "taxPercentage" : 0.5,
+          "amount" : 0.00,
+          "customAttributes" : [ ],
+          "category" : "Shipping",
+          "invoicedTax" : 0.01,
+          "reference1" : "SALES",
+          "impositionType" : "General Sales and Use Tax",
+          "impositionValue" : "Local Sales and Use Tax",
+          "jurisdiction" : "CENTRAL OHIO TRANSIT AUTHORITY",
+          "jurisdictionId" : "78115",
+          "jurisdictionLevel" : "DISTRICT",
+          "originalTax" : 0.01,
+          "situs" : "ADMINISTRATIVE_ORIGIN"
+        } ],
+        "customAttributes" : [ ],
+        "total" : {
+          "totalTaxAmount" : 0.00,
+          "totalPromotionChargeAmount" : 0.00,
+          "totalAdjustmentChargeAmount" : 0.00,
+          "netChargeAmount" : 0.00
+        },
+        "isTaxableFlag" : true,
+        "taxClass" : "91000"
+      } ],
+      "customAttributes" : [ {
+        "name" : "IMAGEURL",
+        "value" : "https://development.bathandbodyworks.com/dw/image/v2/BBDL_DEV/on/demandware.static/-/Sites-master-catalog/default/dwd6b50683/hires/022665828.jpg?sh=471"
+      }, {
+        "name" : "PRODUCTURL",
+        "value" : "https://development.bathandbodyworks.com/p/a-thousand-wishes-travel-size-shower-gel-022665828.html"
+      }, {
+        "name" : "EstimatedDeliveryDateFROM",
+        "value" : "2021-09-27T00:00:00-00:00"
+      }, {
+        "name" : "EstimatedDeliveryDateTO",
+        "value" : "2021-10-01T00:00:00-00:00"
+      }, {
+        "name" : "FragranceName",
+        "value" : "A Thousand Wishes"
+      }, {
+        "name" : "requestLineId",
+        "value" : "item_2"
+      } ],
+      "instructions" : [ ],
+      "orderDates" : [ ],
+      "sublineItems" : [ {
+        "quantity" : 3,
+        "sublineNo" : "1",
+        "statusRank" : 1000,
+        "sendBackorderNotification" : true,
+        "statusDate" : "2021-09-22T10:55:52.592Z"
+      } ],
+      "fulfillmentMethod" : "SHIP_TO_HOME",
+      "carrier" : "ANY",
+      "service" : "STD",
+      "isAssociateDelivery" : "false",
+      "isCurbsidePickup" : "false",
+      "isGiftWrapItem" : false,
+      "color" : "Travel Size Shower Gel",
+      "colorCode" : "9999",
+      "isHiddenGift" : false,
+      "isShipAlone" : false,
+      "shipGroupId" : "shipgroup_1",
+      "shippingChargeType" : "FLAT",
+      "shippingMethodName" : "ANY_STD",
+      "shippingMethodDisplayName" : "Standard",
+      "size" : "3 fl oz / 88 mL",
+      "sizeCode" : "9999",
+      "sublineIdSeq" : 0,
+      "lineTotal" : {
+        "totalTaxAmount" : 1.13,
+        "totalPromotionChargeAmount" : 0.00,
+        "totalAdjustmentChargeAmount" : 0.00,
+        "netChargeAmount" : 16.13
+      },
+      "isCompanion" : false,
+      "isRushOrder" : false,
+      "isTipLine" : false,
+      "isReturnComplete" : false,
+      "isShipFromEqualToShipTo" : "false",
+      "isPresell" : "false",
+      "originalTotalQuantity" : 3,
+      "totalQuantity" : 3
+    } ],
+    "customAttributes" : [ {
+      "name" : "ORDTAXERR",
+      "value" : "N"
+    }, {
+      "name" : "TDFCALCID",
+      "value" : "43474094"
+    }, {
+      "name" : "RDFUID",
+      "value" : "f4cd1fa5-7be6-4a5e-ab08-155bfeca5eed_1632304661207"
+    }, {
+      "name" : "ORDERCHANNEL",
+      "value" : "WEB"
+    }, {
+      "name" : "PAYPALID",
+      "value" : "O-60U25841Y6594480P"
+    } ],
+    "lineItemRelationships" : [ ],
+    "entryType" : "EB2C",
+    "orderTotal" : {
+      "total" : 22.56,
+      "tax" : 1.57,
+      "promotionCharge" : 12.5,
+      "adjustmentCharge" : 0.0
+    },
+    "orderClosed" : false,
+    "isOrderTaxPresent" : true,
+    "orderHistoryUrl" : "https://development.bathandbodyworks.com/on/demandware.store/Sites-BathAndBodyWorks-Site/en_US/Order-Track?orderID=08032704",
+    "locale" : "en_US",
+    "orderSourceCode" : "EB2C",
+    "customerInfo" : {
+      "customerName" : "Roger Tester",
+      "loyaltyProgram" : "BBWXYZ",
+      "loyaltyNumber" : "43763404880",
+      "email" : "test01bbw@gmail.com",
+      "phone" : "7777777777",
+      "firstName" : "Roger",
+      "lastName" : "Tester",
+      "customerId" : "0042800307093"
+    },
+    "createTimestamp" : "2021-09-22T10:55:53.023Z",
+    "updateTimestamp" : "2021-09-22T10:55:53.023Z",
+    "releaseGroupIdSeq" : 0,
+    "addresses" : [ {
+      "addressId" : "billing_address_1",
+      "addressType" : "MailingAddress",
+      "addressLine1" : "Limited Parkway",
+      "firstName" : "Roger",
+      "lastName" : "Tester",
+      "email" : "test01bbw@gmail.com",
+      "city" : "Columbus",
+      "phone" : "7777777777",
+      "stateOrProvinceCode" : "OH",
+      "countryCode" : "US",
+      "zipCode" : "43230",
+      "pobox" : false
+    }, {
+      "addressId" : "ship_address_home_1",
+      "addressType" : "MailingAddress",
+      "addressLine1" : "Limited Parkway",
+      "firstName" : "Roger",
+      "lastName" : "Tester",
+      "city" : "Columbus",
+      "phone" : "7777777777",
+      "stateOrProvinceCode" : "OH",
+      "countryCode" : "US",
+      "zipCode" : "43230",
+      "pobox" : false
+    } ],
+    "billingAddressRefId" : "billing_address_1",
+    "archivedOrder" : false,
+    "isVATInclusive" : false,
+    "paymentMethods" : [ {
+      "code" : "PAYPAL",
+      "tenderType" : "PY",
+      "processorId" : "",
+      "chargeType" : "",
+      "requestedAuthAmount" : 22.56,
+      "requestedChargeAmount" : 0.00,
+      "totalAltRefundedAmount" : 0.00,
+      "totalAuthorizedAmount" : 22.56,
+      "totalCharged" : 0.00,
+      "totalRefundedAmount" : 0.00,
+      "customAttributes" : [ {
+        "name" : "AuthTime",
+        "value" : "2021-09-22T06:55:30-04:00"
+      }, {
+        "name" : "ResponseCode",
+        "value" : "Success"
+      }, {
+        "name" : "paymentSessionId",
+        "value" : "0047408032704"
+      } ],
+      "legacyPaymentType" : "PY",
+      "amount" : 22.56,
+      "paymentRequestId" : "1632308152318",
+      "payPalNumber" : "O-60U25841Y6594480P",
+      "isTokenized" : true,
+      "isSuspendAnyMoreCharge" : false
+    } ],
+    "fraudDetails" : [ {
+      "id" : "1",
+      "zonedDateTime" : "2021-09-22T06:55:30-04:00",
+      "transactionType" : "ORDER_CREATE",
+      "status" : "PENDING",
+      "details" : [ {
+        "name" : "HostName",
+        "value" : "63.72.211.248"
+      }, {
+        "name" : "DeviceIP",
+        "value" : "63.72.211.248"
+      }, {
+        "name" : "SessionID",
+        "value" : "70WFBxK0bKPmcJoXSjfaZig_G-wi5KTikN8="
+      }, {
+        "name" : "JavascriptData",
+        "value" : "TF1;015;;;;;;;;;;;;;;;;;;;;;;Mozilla;Netscape;5.0%20%28Windows%20NT%2010.0%3B%20WOW64%29%20AppleWebKit/537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome/93.0.4577.82%20Safari/537.36;20030107;undefined;true;;true;Win32;undefined;Mozilla/5.0%20%28Windows%20NT%2010.0%3B%20WOW64%29%20AppleWebKit/537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome/93.0.4577.82%20Safari/537.36;en-US;undefined;development.bathandbodyworks.com;undefined;undefined;undefined;undefined;false;false;1632308129782;5.5;6/7/2005%2C%209%3A33%3A44%20PM;1920;1080;;;;;;;22;-330;-330;9/22/2021%2C%204%3A25%3A29%20PM;24;1920;1040;0;0;;;;;;;;;;;;;;;;;;;14;"
+      }, {
+        "name" : "Referer",
+        "value" : "https://development.bathandbodyworks.com/on/demandware.store/Sites-BathAndBodyWorks-Site/en_US/RADIAL_PAYPAL-GetExpressCheckout?PaypalRedirectSource=cart&token=EC-7Y53911067231093X&PayerID=UP72ZED44H2ZY"
+      }, {
+        "name" : "UserAgent",
+        "value" : "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36"
+      }, {
+        "name" : "AcceptCharset",
+        "value" : "UTF-8"
+      }, {
+        "name" : "Accept",
+        "value" : "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+      }, {
+        "name" : "AcceptEncoding",
+        "value" : "gzip"
+      }, {
+        "name" : "AcceptLanguage",
+        "value" : "en-US,en;q=0.9"
+      }, {
+        "name" : "TimeSpentOnSite",
+        "value" : "00:58:39"
+      }, {
+        "name" : "PayPalPayerId",
+        "value" : "UP72ZED44H2ZY"
+      }, {
+        "name" : "PayPalPayerStatus",
+        "value" : "unverified"
+      }, {
+        "name" : "PayPalAddressStatus",
+        "value" : "Confirmed"
+      } ]
+    } ],
+    "checkInventory" : true,
+    "type" : "SALES"
+  },
+  "customAttributes" : {
+    "ORDER_REQUEST_ORIGIN" : "HTTP"
+  }
+}

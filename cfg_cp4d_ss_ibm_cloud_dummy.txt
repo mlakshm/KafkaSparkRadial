@@ -1,0 +1,13 @@
+169.60.196.11:3306
+admin
+XXXXX
+DATABASE=BLUDB;HOSTNAME=10.23.29.162;PORT=30635;PROTOCOL=TCPIP;UID=admin;PWD=XXXXXXXX;
+minimal-prod-kafka-bootstrap-cp4i.itzroks-270006dwv1-tdbuym-6ccd7f378ae819553d37d5f2ee142bd6-0000.us-south.containers.appdomain.cloud:443
+cred2
+yRenuVTcidCVXX
+/myapp/es-cert.jks
+JCi4nt0DkN9BXX
+"gtest50p":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49]
+169.60.196.11
+3306
+KAFKARADIAL
