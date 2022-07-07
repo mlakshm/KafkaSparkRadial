@@ -1604,35 +1604,25 @@ def prepareDFXA(df,json_exploded_path_list,romlistfinal1,rom_col_len_list,epochI
 print(datetime.now())
 
 
-# In[ ]:
-
-query1 = dfi     .writeStream     .outputMode("append")    .option("checkpointLocation", argslist[5])    .option("partition.assignment.strategy", "range")    .foreachBatch(popTablesBlkAtomicNew)    .start()
-    
-query1.awaitTermination(int(argslist[6]))
-
-
-# In[ ]:
-
-while ( (query1.status['isDataAvailable'] == True) and (query1.status['isTriggerActive'] == True) ):
-    
-    query1.status
-  
 try:
- 
-  os.remove(argslist[7])
-
+    
+    
+   query1 = dfi     .writeStream     .outputMode("append")    .option("checkpointLocation", argslist[5])    .option("partition.assignment.strategy", "range")    .foreachBatch(popTablesBlkAtomicNew)    .start()
+    
+   query1.awaitTermination(int(argslist[6]))
+   
+   while ( (query1.status['isDataAvailable'] == True) and (query1.status['isTriggerActive'] == True) ):
+    
+       query1.status
+       
+   query1.stop()
+   query1.status
+   os.remove(argslist[7])
 
 except Exception as e:
     
-    print(e)
-    
-query1.stop()
-
-
-# In[ ]:
-
-
-query1.status
+    os.remove(argslist[7])
+    sys.exit(1)
 
 
 
